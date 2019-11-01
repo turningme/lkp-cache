@@ -25,6 +25,11 @@ public class SimpleCaffeineCacheTest {
 
 
     public static void main(String[] args){
+        test0();
+    }
+
+
+    static void test3(){
 
         int ttCount = 10;
 
@@ -36,7 +41,7 @@ public class SimpleCaffeineCacheTest {
             if (maxSize > 5000){
                 maxSize = 5000;
             }
-            ttList.add(new TT1(bound,maxSize,name,random));
+            ttList.add(new TT1(bound,2,name,random));
         }
 
         ttList.add(new TT1(bound,1000,"tt-111",random));
@@ -67,8 +72,9 @@ public class SimpleCaffeineCacheTest {
                 ) {
             tt1.printInfo();
         }
-    }
 
+
+    }
 
     static void test2(){
         int ttCount = 10;
@@ -133,6 +139,28 @@ public class SimpleCaffeineCacheTest {
 
     }
 
+
+    static void test0(){
+        long maximumSize = 3;
+        Cache<Integer,Integer> caffeineCache = Caffeine.newBuilder()
+                .maximumSize(maximumSize)
+                .removalListener(new RemovalListener<Integer, Integer>() {
+                    public void onRemoval(Integer k, Integer v, RemovalCause removalCause) {
+                        System.out.printf("remove key %s \n",k);
+                    }
+                }).build();
+
+        for (int i=0; i< 10 ; i ++){
+            System.out.printf("input key is %s \n", i);
+            caffeineCache.put(i,i);
+        }
+
+
+        caffeineCache.invalidateAll();
+
+//        System.out.printf("stats input count [%s] , output count [%s]", counterIn.get(), counterOut.get());
+
+    }
 
 
 }
