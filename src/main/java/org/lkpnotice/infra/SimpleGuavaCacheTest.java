@@ -31,7 +31,7 @@ public class SimpleGuavaCacheTest {
 
                         }
                     }
-                })
+                }).recordStats()
                 .build(new CacheLoader<Integer, Integer>() {
                     @Override
                     public Integer load(Integer key) throws Exception {
@@ -52,5 +52,6 @@ public class SimpleGuavaCacheTest {
 
         guavaCache.invalidateAll();
 
+        System.out.println(guavaCache.stats().toString());
     }
 }
