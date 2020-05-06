@@ -109,6 +109,12 @@
       <version>${jmh.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.carrotsearch</groupId>
+      <artifactId>java-sizeof</artifactId>
+      <version>0.0.5</version>
+    </dependency>
+
   </dependencies>
 
 
@@ -146,7 +152,7 @@
 
 
 
-      <!-- Java Compiler -->
+   <!--   &lt;!&ndash; Java Compiler &ndash;&gt;
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -157,14 +163,14 @@
         </configuration>
       </plugin>
 
-      <!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. -->
-      <!-- Change the value of <mainClass>...</mainClass> if your program entry point changes. -->
+      &lt;!&ndash; We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. &ndash;&gt;
+      &lt;!&ndash; Change the value of <mainClass>...</mainClass> if your program entry point changes. &ndash;&gt;
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.0.0</version>
         <executions>
-          <!-- Run shade goal on package phase -->
+          &lt;!&ndash; Run shade goal on package phase &ndash;&gt;
           <execution>
             <phase>package</phase>
             <goals>
@@ -173,22 +179,22 @@
             <configuration>
               <artifactSet>
                 <includes>
-                  <!--<include>org.anylog.pipeline:core</include>
+                  &lt;!&ndash;<include>org.anylog.pipeline:core</include>
                   <include>org.anylog.pipeline:ad-connector-mysql</include>
-                  <include>org.anylog.pipeline:ad-connector-mongo</include>-->
+                  <include>org.anylog.pipeline:ad-connector-mongo</include>&ndash;&gt;
                 </includes>
 
-                <!--	<excludes>
+                &lt;!&ndash;	<excludes>
                         <exclude>org.apache.flink:force-shading</exclude>
                         <exclude>com.google.code.findbugs:jsr305</exclude>
                         <exclude>org.slf4j:*</exclude>
                         <exclude>log4j:*</exclude>
-                    </excludes>-->
+                    </excludes>&ndash;&gt;
               </artifactSet>
               <filters>
                 <filter>
-                  <!-- Do not copy the signatures in the META-INF folder.
-                  Otherwise, this might cause SecurityExceptions when using the JAR. -->
+                  &lt;!&ndash; Do not copy the signatures in the META-INF folder.
+                  Otherwise, this might cause SecurityExceptions when using the JAR. &ndash;&gt;
                   <artifact>*:*</artifact>
                   <excludes>
                     <exclude>META-INF/*.SF</exclude>
@@ -197,7 +203,7 @@
                   </excludes>
                 </filter>
               </filters>
-<!--              <transformers>
+&lt;!&ndash;              <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <mainClass>org.anylog.pipeline.servicesv2.StreamingMain</mainClass>
                 </transformer>
@@ -206,7 +212,7 @@
                   <resource>reference.conf</resource>
                 </transformer>
 
-              </transformers>-->
+              </transformers>&ndash;&gt;
             </configuration>
           </execution>
         </executions>
@@ -228,14 +234,47 @@
               <files>
                 <file>src/main/resources/log4j.xml</file>
               </files>
-              <!--输出全部jar 配置项到指定文件-->
+              &lt;!&ndash;输出全部jar 配置项到指定文件&ndash;&gt;
               <outputFile>${build.directory}/profile.properties</outputFile>
             </configuration>
           </execution>
         </executions>
       </plugin>
 
-
+-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>utf-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer
+                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <manifestEntries>
+                    <Main-Class>org.lkpnotice.infra.introspection.ObjectShallowSize</Main-Class>
+                    <Premain-Class>org.lkpnotice.infra.introspection.ObjectShallowSize</Premain-Class>
+                  </manifestEntries>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
 
@@ -255,9 +294,21 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-shade-plugin</artifactId>
                     <versionRange>[3.0.0,)</versionRange>
+                    <phase>package</phase>
                     <goals>
                       <goal>shade</goal>
                     </goals>
+                    <configuration>
+                      <transformers>
+                        <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                          <manifestEntries>
+                            <Main-Class>org.lkpnotice.infra.introspection.ObjectShallowSize</Main-Class>
+                            <Premain-Class>org.lkpnotice.infra.introspection.ObjectShallowSize</Premain-Class>
+                          </manifestEntries>
+                        </transformer>
+                      </transformers>
+                    </configuration>
                   </pluginExecutionFilter>
                   <action>
                     <ignore/>
