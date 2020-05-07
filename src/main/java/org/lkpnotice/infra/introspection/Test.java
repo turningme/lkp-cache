@@ -11,7 +11,8 @@ import java.util.concurrent.ConcurrentSkipListSet;
  */
 public class Test {
     public static void main(String[] args){
-        test3();
+        test0();
+        test2();
     }
 
 

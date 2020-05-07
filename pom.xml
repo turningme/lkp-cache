@@ -115,6 +115,22 @@
       <version>0.0.5</version>
     </dependency>
 
+
+    <!--jol（java object layout）需要的依赖-->
+    <dependency>
+      <groupId>org.openjdk.jol</groupId>
+      <artifactId>jol-core</artifactId>
+      <version>0.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sourceforge.sizeof</groupId>
+      <artifactId>sizeof</artifactId>
+      <version>0.3</version>
+      <scope>system</scope>
+      <systemPath>/Users/jpliu/github/SizeOf.jar</systemPath>
+    </dependency>
+
   </dependencies>
 
 
