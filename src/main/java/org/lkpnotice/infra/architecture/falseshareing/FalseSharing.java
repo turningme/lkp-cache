@@ -1,7 +1,5 @@
-package org.lkpnotice.infra.falseshareing;
+package org.lkpnotice.infra.architecture.falseshareing;
 
-
-import sun.misc.Contended;
 
 /**
  * Created by jpliu on 2020/5/18.
