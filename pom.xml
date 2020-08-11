@@ -16,6 +16,8 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <jmh.version>1.21</jmh.version>
+    <akka.version>2.6.8</akka.version>
+    <scala.binary.version>2.13</scala.binary.version>
   </properties>
 
 
@@ -129,6 +131,12 @@
       <version>0.3</version>
       <scope>system</scope>
       <systemPath>/Users/jpliu/github/SizeOf.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-stream_${scala.binary.version}</artifactId>
+      <version>${akka.version}</version>
     </dependency>
 
   </dependencies>
