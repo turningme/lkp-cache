@@ -20,5 +20,8 @@ public class App
 
         System.out.println(byteSet.contains(x));
         System.out.println(byteSet.contains(y));
+
+        //System.load();
+        //System.loadLibrary();
     }
 }
