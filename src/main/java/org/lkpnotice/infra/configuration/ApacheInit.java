@@ -22,7 +22,7 @@ public class ApacheInit {
         HierarchicalINIConfiguration iniConfiguration = new HierarchicalINIConfiguration();
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("org/lkpnotice/infra/configuration/test.ini");
         iniConfiguration.load(inputStream);
-
+        iniConfiguration.setDelimiterParsingDisabled(false);
 
         PrintStream p = new PrintStream(System.out);
 
@@ -38,6 +38,14 @@ public class ApacheInit {
             }
         }
 
+
+        SubnodeConfiguration sub = iniConfiguration.getSection("schedule");
+        if (!sub.isEmpty()){
+            String[] array = sub.getStringArray("partitions");
+            System.out.println(array.length);
+            System.out.println(array[0]);
+            System.out.println(StringUtils.split(array[0],",").length);
+        }
 
     }
 

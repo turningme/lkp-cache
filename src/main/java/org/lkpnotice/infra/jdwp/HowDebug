@@ -1,0 +1,18 @@
+ DEBUG_INFO="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5006"
+
+
+
+
+
+11:24
+jdb -connect com.sun.jdi.SocketAttach:hostname=127.0.0.1,port=5006
+11:26
+stop at tv.stickyads.configuration.UniquestatsConf:125
+11:26
+cont
+11:26
+wherei
+11:27
+locals
+11:27
+dump e
