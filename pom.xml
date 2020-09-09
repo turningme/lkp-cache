@@ -21,6 +21,7 @@
   </properties>
 
 
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -143,6 +144,12 @@
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>29.0-jre</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-configuration</groupId>
+      <artifactId>commons-configuration</artifactId>
+      <version>1.6</version>
     </dependency>
 
 
