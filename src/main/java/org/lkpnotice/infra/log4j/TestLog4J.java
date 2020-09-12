@@ -19,6 +19,10 @@ import org.slf4j.LoggerFactory;
  对于门面， api 层的进入具体入口的代码是通过一个指定类进入的或者绑定  ， 而代理模式 是一个对象内部实现不同，在生成代理对象的时候通过配置选择具体的被代理的事务对象～
  感觉应该对～
 
+
+ -Dlog4j.configuration=file:"/Users/jpliu/tmp/log4j.prop"
+ -Dlog4j.configuration=file:/etc/redstats/log4j.properties
+
  */
 public class TestLog4J {
     static final Logger LOG = LoggerFactory.getLogger(TestLog4J.class);
