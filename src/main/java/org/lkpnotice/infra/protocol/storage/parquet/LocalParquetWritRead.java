@@ -38,8 +38,8 @@ public class LocalParquetWritRead {
 
 
     public static void main(String[] args) throws IOException {
-//       write();
-        read();
+       write();
+//        read();
     }
 
 
