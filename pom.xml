@@ -268,6 +268,30 @@
       <version>2.6.1</version>
     </dependency>
 
+
+    <!--metrics-->
+    <dependency>
+      <groupId>io.dropwizard.metrics</groupId>
+      <artifactId>metrics-core</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+
+    <!--JMH  see above-->
+<!--    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-core</artifactId>
+      <version>1.19</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-generator-annprocess</artifactId>
+      <version>1.19</version>
+      <scope>provided</scope>
+    </dependency>-->
+
   </dependencies>
 
 
