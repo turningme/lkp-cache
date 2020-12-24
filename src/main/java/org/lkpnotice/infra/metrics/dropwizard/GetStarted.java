@@ -21,7 +21,7 @@ public class GetStarted {
         wait5Seconds();
 
 //        System.out.println("finished - " + metrics.meter("requests").getCount());
-        slf4jReporter.close();
+        slf4jReporter.report();
     }
 
     static void startReport() {
@@ -35,6 +35,8 @@ public class GetStarted {
 
         slf4jReporter = Slf4jReporter.forRegistry(metrics)
                 .build();
+//        slf4jReporter.start(1, TimeUnit.SECONDS);
+
     }
 
     static void wait5Seconds() {
