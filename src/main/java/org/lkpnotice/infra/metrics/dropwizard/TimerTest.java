@@ -4,6 +4,8 @@ import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Slf4jReporter;
 import com.codahale.metrics.Timer;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.codahale.metrics.MetricRegistry.name;
 
 /**
@@ -17,6 +19,8 @@ public class TimerTest {
 
     public static void main(String[] args) throws InterruptedException {
         slf4jReporter = Slf4jReporter.forRegistry(metrics)
+                .convertRatesTo(TimeUnit.SECONDS)
+                .convertDurationsTo(TimeUnit.MILLISECONDS)
                 .build();
         TimerTest tt = new TimerTest();
         tt.tt();

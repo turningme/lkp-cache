@@ -5,12 +5,15 @@ import com.codahale.metrics.Meter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Slf4jReporter;
 
-import java.util.concurrent.TimeUnit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Created by jpliu on 2020/12/22.
  */
 public class GetStarted {
+    static final Logger log = LoggerFactory.getLogger(GetStarted.class);
     static final MetricRegistry metrics = new MetricRegistry();
     static  Slf4jReporter slf4jReporter;
     public static void main(String args[]) {
@@ -34,6 +37,7 @@ public class GetStarted {
 
 
         slf4jReporter = Slf4jReporter.forRegistry(metrics)
+                .outputTo(log)
                 .build();
 //        slf4jReporter.start(1, TimeUnit.SECONDS);
 
