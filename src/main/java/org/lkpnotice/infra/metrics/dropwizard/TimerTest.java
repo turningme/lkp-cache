@@ -29,7 +29,7 @@ public class TimerTest {
     }
 
 
-    public void tt() throws InterruptedException {
+    private void tt() throws InterruptedException {
         Timer.Context context = responses.time();
         Thread.sleep(100);
         context.stop();
