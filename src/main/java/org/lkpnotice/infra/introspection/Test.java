@@ -1,7 +1,7 @@
 package org.lkpnotice.infra.introspection;
 
 import com.carrotsearch.sizeof.RamUsageEstimator;
-import net.sourceforge.sizeof.SizeOf;
+/*import net.sourceforge.sizeof.SizeOf;*/
 
 import java.util.HashSet;
 import java.util.concurrent.ConcurrentSkipListSet;
@@ -17,25 +17,25 @@ public class Test {
 
 
     static void test0(){
-        System.out.println(SizeOf.deepSizeOf(new HashSet<>()));
-        System.out.println(SizeOf.deepSizeOf(new ConcurrentSkipListSet<>()));
+        /*System.out.println(SizeOf.deepSizeOf(new HashSet<>()));
+        System.out.println(SizeOf.deepSizeOf(new ConcurrentSkipListSet<>()));*/
     }
 
 
     static void test1(){
-        System.out.println(SizeOf.deepSizeOf(new HashSet<>()));
-        System.out.println(SizeOf.deepSizeOf(new ConcurrentSkipListSet<>()));
+/*        System.out.println(SizeOf.deepSizeOf(new HashSet<>()));
+        System.out.println(SizeOf.deepSizeOf(new ConcurrentSkipListSet<>()));*/
     }
 
     static void test2(){
-        System.out.println(RamUsageEstimator.sizeOf(new HashSet<>()));
-        System.out.println(RamUsageEstimator.sizeOf(new ConcurrentSkipListSet<>()));
+/*        System.out.println(RamUsageEstimator.sizeOf(new HashSet<>()));
+        System.out.println(RamUsageEstimator.sizeOf(new ConcurrentSkipListSet<>()));*/
     }
 
 
     static void test3(){
-        System.out.println(SizeOf.deepSizeOf(new A()));
-        System.out.println(SizeOf.deepSizeOf(new C()));
+    /*    System.out.println(SizeOf.deepSizeOf(new A()));
+        System.out.println(SizeOf.deepSizeOf(new C()));*/
     }
 
 

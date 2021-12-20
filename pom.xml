@@ -128,13 +128,13 @@
       <version>0.10</version>
     </dependency>
 
-    <dependency>
+<!--    <dependency>
       <groupId>net.sourceforge.sizeof</groupId>
       <artifactId>sizeof</artifactId>
       <version>0.3</version>
       <scope>system</scope>
       <systemPath>/Users/jpliu/github/SizeOf.jar</systemPath>
-    </dependency>
+    </dependency>-->
 
     <dependency>
       <groupId>com.typesafe.akka</groupId>
@@ -291,6 +291,14 @@
       <version>1.19</version>
       <scope>provided</scope>
     </dependency>-->
+
+
+<!--    Headless browser selenium webdriver -->
+    <dependency>
+      <groupId>com.codeborne</groupId>
+      <artifactId>phantomjsdriver</artifactId>
+      <version>1.2.1</version>
+    </dependency>
 
   </dependencies>
 
