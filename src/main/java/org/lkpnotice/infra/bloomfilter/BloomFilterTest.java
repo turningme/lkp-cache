@@ -25,8 +25,8 @@ public class BloomFilterTest {
         bf.put("x3");
         bf.put("x4");
 
-        System.out.println(bf.approximateElementCount());
-        System.out.println(bf.expectedFpp());
+     /*   System.out.println(bf.approximateElementCount());
+        System.out.println(bf.expectedFpp());*/
     }
 
 }
