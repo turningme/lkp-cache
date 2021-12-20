@@ -28,12 +28,12 @@ public class Test {
             phantomJSDriver.get(testurl.toString());
             System.out.println("Successfully loaded url " + testurl.toString() + " into PhantomJS");
 
-            Map<String, String> result = (Map<String, String>) phantomJSDriver.executePhantomJS(extractionLogic.getLogic());
+            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executePhantomJS(extractionLogic.getLogic());
             if (result != null){
                 System.out.println("print result ");
                 StringBuilder stringBuilder = new StringBuilder();
 
-                for (String key:result.keySet()) {
+                for (Object key:result.keySet()) {
                     stringBuilder.append("key = ").append(key);
                     stringBuilder.append(" , value = ").append(result.get(key));
                 }
