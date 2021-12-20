@@ -36,6 +36,8 @@ public class Test {
                     stringBuilder.append("key = ").append(key);
                     stringBuilder.append(" , value = ").append(result.get(key));
                 }
+
+                System.out.println(stringBuilder.toString());
             }else {
                 System.out.println(" The result is null ");
             }
