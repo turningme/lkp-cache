@@ -32,11 +32,12 @@ public class Test {
             if (result != null){
                 System.out.println("print result ");
                 StringBuilder stringBuilder = new StringBuilder();
+
                 for (String key:result.keySet()) {
                     stringBuilder.append("key = ").append(key);
                     stringBuilder.append(" , value = ").append(result.get(key));
                 }
-
+                System.out.println("key length " + result.size());
                 System.out.println(stringBuilder.toString());
             }else {
                 System.out.println(" The result is null ");
