@@ -28,7 +28,7 @@ public class Test {
             phantomJSDriver.get(testurl.toString());
             System.out.println("Successfully loaded url " + testurl.toString() + " into PhantomJS");
 
-            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executePhantomJS(extractionLogic.getLogic());
+            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executeAsyncScript(extractionLogic.getLogic());
             if (result != null){
                 System.out.println("print result ");
                 StringBuilder stringBuilder = new StringBuilder();
