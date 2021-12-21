@@ -57,7 +57,7 @@ public class PhantomJsDriverFactory {
         int scriptTimeout = 90;
         DesiredCapabilities desiredCapabilities = DesiredCapabilities.phantomjs();
         desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,"/apollo/env/WebContentExtractionService/bin/phantomjs");
-        desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_CLI_ARGS," --web-security=false --ssl-protocol=any --ignore-ssl-errors=yes --debug=true --webdriver-logleve=/tmp/phantomjs.log ");
+        desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_CLI_ARGS," --web-security=false --ssl-protocol=any --ignore-ssl-errors=yes --debug=true --webdriver-logfile=/tmp/phantomjs.log ");
 
         PhantomJsDriverFactory phantomJsDriverFactory = new PhantomJsDriverFactory(pageLoadTimeout, scriptTimeout,desiredCapabilities);
         return phantomJsDriverFactory;
