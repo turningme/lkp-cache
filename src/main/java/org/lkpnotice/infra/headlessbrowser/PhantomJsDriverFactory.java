@@ -47,9 +47,10 @@ public class PhantomJsDriverFactory {
      * page load timeout
      */
     public PhantomJSDriver getInstance() {
+        //,"--debug=true"
         PhantomJSDriverService phantomJSDriverService = (new PhantomJSDriverService.Builder()).usingPhantomJSExecutable(new File("/apollo/env/WebContentExtractionService/bin/phantomjs")).usingGhostDriver(null)
                 .usingAnyFreePort().withProxy(null).withLogFile(new File("/tmp/phantomjs.log"))
-                .usingCommandLineArguments(new String[]{"--web-security=false","--ssl-protocol=any" , "--ignore-ssl-errors=yes","--debug=true" }).usingGhostDriverCommandLineArguments(new String[]{}).build();
+                .usingCommandLineArguments(new String[]{"--web-security=false","--ssl-protocol=any" , "--ignore-ssl-errors=yes" }).usingGhostDriverCommandLineArguments(new String[]{}).build();
         PhantomJSDriver driver = new PhantomJSDriver(phantomJSDriverService,capabilities);
         setTimeouts(driver);
         return driver;
