@@ -54,7 +54,7 @@ public class Test {
 
 
             System.out.println("complete phase ");
-        } catch (MalformedURLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("exception " + e.toString());
         }finally {
