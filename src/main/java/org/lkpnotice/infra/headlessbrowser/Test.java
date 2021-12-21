@@ -11,7 +11,7 @@ public class Test {
     public static void main(String[] args){
         String logic = "/apollo/env/WebContentExtractionService/extraction-logic/logic.js";
         String input = "/tmp/ss.html";
-
+        PhantomJSDriver phantomJSDriver = null;
         try {
             System.out.println(" Hello World ");
             System.out.println(" logic =  " + logic);
@@ -22,7 +22,7 @@ public class Test {
             PhantomJsDriverFactory phantomJsDriverFactory = PhantomJsDriverFactory.getStaticInstance();
             System.out.println(String.join(", " , args));
 
-            PhantomJSDriver phantomJSDriver =  phantomJsDriverFactory.getInstance();
+            phantomJSDriver =  phantomJsDriverFactory.getInstance();
 
             System.out.println("Loading url " + testurl.toString() + " into PhantomJS");
             phantomJSDriver.get(testurl.toString());
@@ -48,6 +48,9 @@ public class Test {
         } catch (MalformedURLException e) {
             e.printStackTrace();
             System.out.println("exception " + e.toString());
+        }finally {
+            phantomJSDriver.close();
+            phantomJSDriver.quit();
         }
 
 
