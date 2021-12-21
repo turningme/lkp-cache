@@ -60,7 +60,7 @@ public class Test {
         }finally {
 
             System.out.println("into close ");
-            phantomJSDriver.close();
+//            phantomJSDriver.close();
             System.out.println("close");
             phantomJSDriver.quit();
             System.out.println("quit");
