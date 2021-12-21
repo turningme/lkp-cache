@@ -34,7 +34,9 @@ public class Test {
                 e.printStackTrace();
                 System.out.println(e.toString());
             }
-            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executeAsyncScript(extractionLogic.getLogic());
+
+
+/*            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executeAsyncScript(extractionLogic.getLogic());
             if (result != null){
                 System.out.println("print result ");
                 StringBuilder stringBuilder = new StringBuilder();
@@ -47,7 +49,7 @@ public class Test {
                 System.out.println(stringBuilder.toString());
             }else {
                 System.out.println(" The result is null ");
-            }
+            }*/
 
 
 
