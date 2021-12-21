@@ -61,9 +61,9 @@ public class Test {
 
             System.out.println("into close ");
             phantomJSDriver.close();
-            System.out.println("close");
+            System.out.println("close1");
             phantomJSDriver.quit();
-            System.out.println("quit");
+            System.out.println("quit1");
         }
 
 
