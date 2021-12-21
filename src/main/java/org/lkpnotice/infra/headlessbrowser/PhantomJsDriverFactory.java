@@ -48,22 +48,23 @@ public class PhantomJsDriverFactory {
      */
     public PhantomJSDriver getInstance() {
         //,"--debug=true"
-        PhantomJSDriverService phantomJSDriverService = (new PhantomJSDriverService.Builder()).usingPhantomJSExecutable(new File("/apollo/env/WebContentExtractionService/bin/phantomjs")).usingGhostDriver(null)
+       /* PhantomJSDriverService phantomJSDriverService = (new PhantomJSDriverService.Builder()).usingPhantomJSExecutable(new File("/apollo/env/WebContentExtractionService/bin/phantomjs")).usingGhostDriver(null)
                 .usingAnyFreePort().withProxy(null).withLogFile(new File("/tmp/phantomjs.log"))
                 .usingCommandLineArguments(new String[]{"--web-security=false","--ssl-protocol=any" , "--ignore-ssl-errors=yes" }).usingGhostDriverCommandLineArguments(new String[]{}).build();
-        PhantomJSDriver driver = new PhantomJSDriver(phantomJSDriverService,capabilities);
+        PhantomJSDriver driver = new PhantomJSDriver(phantomJSDriverService,capabilities);*/
+        PhantomJSDriver driver = new PhantomJSDriver(capabilities);
         setTimeouts(driver);
         return driver;
     }
 
 
     public static PhantomJsDriverFactory getStaticInstance(){
+        //--debug=true   --webdriver-loglevel=NONE
         int pageLoadTimeout = 90;
         int scriptTimeout = 90;
         DesiredCapabilities desiredCapabilities = DesiredCapabilities.phantomjs();
-       /* desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,"/apollo/env/WebContentExtractionService/bin/phantomjs");
-        desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_CLI_ARGS," --web-security=false --ssl-protocol=any --ignore-ssl-errors=yes --debug=true   --webdriver-loglevel=NONE --webdriver-logfile=/tmp/phantomjs.log  /tmp/demo.js");
-*/
+        desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,"/apollo/env/WebContentExtractionService/bin/phantomjs");
+        desiredCapabilities.setCapability(org.openqa.selenium.phantomjs.PhantomJSDriverService.PHANTOMJS_CLI_ARGS," --web-security=false --ssl-protocol=any --ignore-ssl-errors=yes  --webdriver-logfile=/tmp/phantomjs1.log  ");
         PhantomJsDriverFactory phantomJsDriverFactory = new PhantomJsDriverFactory(pageLoadTimeout, scriptTimeout,desiredCapabilities);
         return phantomJsDriverFactory;
     }
