@@ -59,6 +59,7 @@ public class Test {
             System.out.println("exception " + e.toString());
         }finally {
 
+            System.out.println("into close ");
             phantomJSDriver.close();
             System.out.println("close");
             phantomJSDriver.quit();
