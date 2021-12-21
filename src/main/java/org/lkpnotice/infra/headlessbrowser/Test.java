@@ -28,6 +28,12 @@ public class Test {
             phantomJSDriver.get(testurl.toString());
             System.out.println("Successfully loaded url " + testurl.toString() + " into PhantomJS");
 
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                System.out.println(e.toString());
+            }
             Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executeAsyncScript(extractionLogic.getLogic());
             if (result != null){
                 System.out.println("print result ");
