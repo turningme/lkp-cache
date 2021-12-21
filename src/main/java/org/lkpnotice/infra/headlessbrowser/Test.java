@@ -58,8 +58,11 @@ public class Test {
             e.printStackTrace();
             System.out.println("exception " + e.toString());
         }finally {
+
             phantomJSDriver.close();
+            System.out.println("close");
             phantomJSDriver.quit();
+            System.out.println("quit");
         }
 
 
