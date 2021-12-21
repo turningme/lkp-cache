@@ -9,7 +9,8 @@ import java.util.Map;
 
 public class Test {
     public static void main(String[] args){
-        String logic = "/apollo/env/WebContentExtractionService/extraction-logic/logic.js";
+//        String logic = "/apollo/env/WebContentExtractionService/extraction-logic/logic.js";
+        String logic = "/tmp/logic.js";
         String input = "/tmp/ss.html";
         PhantomJSDriver phantomJSDriver = null;
         try {
@@ -36,7 +37,7 @@ public class Test {
             }
 
 
-/*            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executeAsyncScript(extractionLogic.getLogic());
+            Map<Object, Object> result = (Map<Object, Object>) phantomJSDriver.executeAsyncScript(extractionLogic.getLogic());
             if (result != null){
                 System.out.println("print result ");
                 StringBuilder stringBuilder = new StringBuilder();
@@ -49,7 +50,7 @@ public class Test {
                 System.out.println(stringBuilder.toString());
             }else {
                 System.out.println(" The result is null ");
-            }*/
+            }
 
 
 
