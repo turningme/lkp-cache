@@ -29,15 +29,16 @@ public class TestFuture {
             String rStr = result.get(5, TimeUnit.SECONDS);
             System.out.println("rStr : " + rStr);
         } catch (TimeoutException exception) {
+            System.out.println("e " + exception);
             result.cancel(true);
 
         }
         catch (InterruptedException exception) {
-
+            System.out.println("e " + exception);
 
         }
         catch (ExecutionException exception) {
-
+            System.out.println("e " + exception);
         }
 
 
