@@ -3,6 +3,8 @@ package org.lkpnotice.infra.headlessbrowser;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
@@ -13,6 +15,18 @@ public class Test {
         String logic = "/tmp/logic.js";
         String input = "/tmp/ss.html";
         PhantomJSDriver phantomJSDriver = null;
+
+        PrintStream out = System.out;
+        PrintStream ps = null;
+        try {
+            ps = new PrintStream("/tmp/printstream1.txt");
+            System.setOut(ps);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+//            LOGGER.error(e);
+        }
+
+
         try {
             System.out.println(" Hello World ");
             System.out.println(" logic =  " + logic);
@@ -64,6 +78,10 @@ public class Test {
             System.out.println("close1");
             phantomJSDriver.quit();
             System.out.println("quit1");
+
+            System.setOut(out);
+            ps.flush();
+            ps.close();
         }
 
 
