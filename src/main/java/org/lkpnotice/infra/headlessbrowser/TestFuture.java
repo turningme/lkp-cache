@@ -12,12 +12,13 @@ public class TestFuture {
         CompletableFuture<String> result = CompletableFuture.supplyAsync(() ->
                 {
 
-                    while(ss){
+                    for(int i = 0; i< 2 ; i++){
                         try {
+                            System.out.println(" now in i= " + i);
                             Thread.sleep(30000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
-                            System.out.println("xxxxx ");
+                            System.out.println("interrupted now ");
                         }
                     }
 
@@ -30,7 +31,22 @@ public class TestFuture {
             System.out.println("rStr : " + rStr);
         } catch (TimeoutException exception) {
             System.out.println("e " + exception);
-            result.cancel(true);
+            for(int i = 0;i <10 ; i++){
+                if (!result.isCancelled()){
+                    result.cancel(true);
+                    System.out.println("cancel times  i= " + i);
+                    try {
+                        Thread.sleep(200);
+                    }catch (Exception e){
+                        System.out.println(" sleep 200 exception " + e);
+                    }
+
+                    continue;
+                }
+
+                System.out.println("state cancelled ");
+            }
+
 
         }
         catch (InterruptedException exception) {
