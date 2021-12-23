@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+// org.lkpnotice.infra.headlessbrowser.TestFuture
 public class TestFuture {
     public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
         boolean ss = true;
@@ -16,6 +17,7 @@ public class TestFuture {
                         try {
                             System.out.println(" now in i= " + i);
                             Thread.sleep(30000);
+                            System.out.println(" now after in i= " + i);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                             System.out.println("interrupted now ");
@@ -32,7 +34,6 @@ public class TestFuture {
         } catch (TimeoutException exception) {
             System.out.println("e " + exception);
             for(int i = 0;i <10 ; i++){
-                if (!result.isCancelled()){
                     result.cancel(true);
                     System.out.println("cancel times  i= " + i);
                     try {
@@ -41,10 +42,6 @@ public class TestFuture {
                         System.out.println(" sleep 200 exception " + e);
                     }
 
-                    continue;
-                }
-
-                System.out.println("state cancelled ");
             }
 
 
