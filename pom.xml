@@ -19,7 +19,7 @@
     <akka.version>2.6.8</akka.version>
     <scala.binary.version>2.13</scala.binary.version>
     <parquet.version>1.10.1</parquet.version>
-    <hadoop.version>3.0.2</hadoop.version>
+    <hadoop.version>3.1.4</hadoop.version>
   </properties>
 
 
