@@ -1,13 +1,13 @@
 package org.lkpnotice.infra.lock;
 
-import sun.misc.Contended;
+//import sun.misc.Contended;
 
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Created by jpliu on 2019/11/24.
  */
-@Contended
+//@Contended
 public class ClhSpinLock {
     private final ThreadLocal<Node> prev;
     private final ThreadLocal<Node> node;

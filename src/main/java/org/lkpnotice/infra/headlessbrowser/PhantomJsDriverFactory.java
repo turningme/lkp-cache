@@ -15,6 +15,13 @@ public class PhantomJsDriverFactory {
     private int scriptTimeoutInSeconds;
     DesiredCapabilities capabilities;
 
+/*
+    static {
+        org.openqa.selenium.remote.HttpCommandExecutor.class.getDeclaredField("")
+    }
+*/
+
+
     public PhantomJsDriverFactory(int pageLoadTimeoutInSeconds, int scriptTimeoutInSeconds,
                                   DesiredCapabilities capabilities) {
         this.pageLoadTimeoutInSeconds = pageLoadTimeoutInSeconds;
